@@ -13,4 +13,5 @@ export type ChapterEvent = {
   topicCategory: string | null;
   resource: string | null; // "Speaker / Resource"
   resourceStatus: string | null;
+  targetAudience: string | null;
 };

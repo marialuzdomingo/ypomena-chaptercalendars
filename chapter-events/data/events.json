@@ -13,7 +13,8 @@
     "lifelongLearningCategories": "Business Innovation",
     "topicCategory": "AI & Technology",
     "resource": "Mark Troy",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "YNG,Members,Spouses (Mixed)"
   },
   {
     "id": "row-2",
@@ -29,7 +30,8 @@
     "lifelongLearningCategories": "Business Leadership",
     "topicCategory": "Leadership,Entrepreneurship,Collaboration",
     "resource": "EY",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members"
   },
   {
     "id": "row-3",
@@ -45,7 +47,8 @@
     "lifelongLearningCategories": "Business Leadership",
     "topicCategory": "Leadership",
     "resource": "TBC",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members"
   },
   {
     "id": "row-4",
@@ -61,7 +64,8 @@
     "lifelongLearningCategories": "Business Innovation",
     "topicCategory": "AI & Technology",
     "resource": "Dr. Jehangir Amjad",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-5",
@@ -77,7 +81,8 @@
     "lifelongLearningCategories": "Business Growth",
     "topicCategory": "Entrepreneurship,Leadership,Family Business",
     "resource": "Jaime Grego-Mayor",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members"
   },
   {
     "id": "row-6",
@@ -93,7 +98,8 @@
     "lifelongLearningCategories": "Business Innovation",
     "topicCategory": "AI & Technology",
     "resource": "Aditya Berlia",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed),YNG"
   },
   {
     "id": "row-7",
@@ -109,7 +115,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Longevity,Wellness",
     "resource": "TBC",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-8",
@@ -125,7 +132,8 @@
     "lifelongLearningCategories": "Business Growth",
     "topicCategory": "Investing,Leadership",
     "resource": "Rob Follows",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members"
   },
   {
     "id": "row-9",
@@ -141,7 +149,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Leadership",
     "resource": "TBD",
-    "resourceStatus": "Pending"
+    "resourceStatus": "Pending",
+    "targetAudience": "Members"
   },
   {
     "id": "row-10",
@@ -157,7 +166,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Relationships,Creativity",
     "resource": "TBD",
-    "resourceStatus": "Pending"
+    "resourceStatus": "Pending",
+    "targetAudience": "Spouses (Mixed),Members"
   },
   {
     "id": "row-11",
@@ -173,7 +183,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Leadership,Wellness",
     "resource": "Polar Explorer / Climate scientist",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Spouses (Mixed),Members"
   },
   {
     "id": "row-12",
@@ -189,7 +200,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Sustainability",
     "resource": "Marine Biologist",
-    "resourceStatus": "Wishlist"
+    "resourceStatus": "Wishlist",
+    "targetAudience": "Members,Family"
   },
   {
     "id": "row-13",
@@ -205,7 +217,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Wellness",
     "resource": "World-class freediver or breathwork instructor",
-    "resourceStatus": "Wishlist"
+    "resourceStatus": "Wishlist",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-14",
@@ -221,7 +234,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Art",
     "resource": "Alia Hamza",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Family"
   },
   {
     "id": "row-15",
@@ -237,7 +251,8 @@
     "lifelongLearningCategories": "Business Leadership",
     "topicCategory": "Leadership",
     "resource": "Boris Groyceberg",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Spouses (Mixed),Members"
   },
   {
     "id": "row-16",
@@ -253,7 +268,8 @@
     "lifelongLearningCategories": "Business Growth",
     "topicCategory": "Entrepreneurship",
     "resource": "Marketer + Gen Z creator",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members"
   },
   {
     "id": "row-17",
@@ -269,7 +285,8 @@
     "lifelongLearningCategories": "Generational Success",
     "topicCategory": "Investing,Estate",
     "resource": "Private Bank resource with a family lawyer",
-    "resourceStatus": "Wishlist"
+    "resourceStatus": "Wishlist",
+    "targetAudience": "Gold Members,Spouses (Mixed)"
   },
   {
     "id": "row-18",
@@ -285,7 +302,8 @@
     "lifelongLearningCategories": "Generational Success",
     "topicCategory": "Family Business",
     "resource": "Tharwat + next-gen family member",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Gold Members"
   },
   {
     "id": "row-19",
@@ -301,7 +319,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Wellness,Longevity",
     "resource": "(Longevity physician) + Nutritionist + Exercise physiologist",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-20",
@@ -317,7 +336,8 @@
     "lifelongLearningCategories": "Family Focus",
     "topicCategory": "Parenting",
     "resource": "Tarek Sakr + recent YPO kid now in university",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,YNG,Family"
   },
   {
     "id": "row-21",
@@ -333,7 +353,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Relationships",
     "resource": "Mint El Mokadem (Somatic sexologist) + possibly Esther Perelman",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-22",
@@ -349,7 +370,8 @@
     "lifelongLearningCategories": "Business Growth",
     "topicCategory": "Investing",
     "resource": "Behavioural economist or wealth psychologist",
-    "resourceStatus": "Wishlist"
+    "resourceStatus": "Wishlist",
+    "targetAudience": "Members"
   },
   {
     "id": "row-23",
@@ -365,7 +387,8 @@
     "lifelongLearningCategories": "Business Innovation",
     "topicCategory": "AI & Technology",
     "resource": "Mohamed Kamel",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Family"
   },
   {
     "id": "row-24",
@@ -381,7 +404,8 @@
     "lifelongLearningCategories": "Business Leadership",
     "topicCategory": "Leadership",
     "resource": "EY",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed),Gold Members"
   },
   {
     "id": "row-25",
@@ -397,7 +421,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Other",
     "resource": "Chef",
-    "resourceStatus": "Pending"
+    "resourceStatus": "Pending",
+    "targetAudience": "Gold Members,Spouses (Mixed)"
   },
   {
     "id": "row-26",
@@ -413,7 +438,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Relationships",
     "resource": "Dr Jess O'reilly",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Gold Members,Spouses (Mixed)"
   },
   {
     "id": "row-27",
@@ -429,7 +455,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "AI & Technology,Mental Health,Leadership",
     "resource": "Mo Gawdat",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Spouses (Mixed),Members,Gold Members"
   },
   {
     "id": "row-28",
@@ -445,7 +472,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Other,Relationships",
     "resource": "Sebastian Marroquin",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed),Gold Members"
   },
   {
     "id": "row-29",
@@ -461,7 +489,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Other",
     "resource": "Eric Simonet",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Gold Members,Spouses (Mixed)"
   },
   {
     "id": "row-30",
@@ -477,7 +506,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Other",
     "resource": "Dr. Michael Breus",
-    "resourceStatus": "Pending"
+    "resourceStatus": "Pending",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-31",
@@ -493,7 +523,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Other,Leadership",
     "resource": "Prof. Huggy Rao",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-32",
@@ -509,7 +540,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Other",
     "resource": "Shane Benzie",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Gold Members,Spouses (Mixed)"
   },
   {
     "id": "row-33",
@@ -525,7 +557,8 @@
     "lifelongLearningCategories": "Business Growth",
     "topicCategory": "Other",
     "resource": "Verne Harnish",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-34",
@@ -541,7 +574,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Other",
     "resource": "Dr. Vonda Wright",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Spouses (Mixed),Members"
   },
   {
     "id": "row-35",
@@ -557,7 +591,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Geopolitics",
     "resource": "Prof. John Mearsheimer",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-36",
@@ -573,7 +608,8 @@
     "lifelongLearningCategories": "Business Leadership",
     "topicCategory": "Leadership",
     "resource": "Henley & Partners",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-37",
@@ -589,7 +625,8 @@
     "lifelongLearningCategories": "Business Leadership",
     "topicCategory": "Leadership",
     "resource": "Goldman Sachs",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-38",
@@ -605,7 +642,8 @@
     "lifelongLearningCategories": "Family Focus",
     "topicCategory": "Other",
     "resource": "Harvard Prof",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "YNG"
   },
   {
     "id": "row-39",
@@ -621,7 +659,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Relationships",
     "resource": "Anesh Jagtiati",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-40",
@@ -637,7 +676,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Other",
     "resource": "Haru Meghraj",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Spouses (Mixed)"
   },
   {
     "id": "row-41",
@@ -653,7 +693,8 @@
     "lifelongLearningCategories": "Family Focus",
     "topicCategory": "Relationships",
     "resource": "VG Narayanan",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Spouses (Mixed)"
   },
   {
     "id": "row-42",
@@ -669,7 +710,8 @@
     "lifelongLearningCategories": "Generational Success",
     "topicCategory": "Parenting",
     "resource": "Exploring",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed),YNG"
   },
   {
     "id": "row-43",
@@ -685,7 +727,8 @@
     "lifelongLearningCategories": "Personal Development",
     "topicCategory": "Spirituality",
     "resource": "Exploring Rima Zanoun",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Family"
   },
   {
     "id": "row-44",
@@ -701,7 +744,8 @@
     "lifelongLearningCategories": "Business Innovation",
     "topicCategory": "Leadership",
     "resource": "Exploring",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members"
   },
   {
     "id": "row-45",
@@ -717,7 +761,8 @@
     "lifelongLearningCategories": "Generational Success",
     "topicCategory": "Family Business",
     "resource": "Exploring",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Family"
   },
   {
     "id": "row-46",
@@ -733,7 +778,8 @@
     "lifelongLearningCategories": "Generational Success",
     "topicCategory": "Family Business",
     "resource": "Exploring",
-    "resourceStatus": "Under Negotiation"
+    "resourceStatus": "Under Negotiation",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-47",
@@ -749,7 +795,8 @@
     "lifelongLearningCategories": "Business Growth",
     "topicCategory": "AI & Technology",
     "resource": "Dr. Williams",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Spouses (Mixed),Members"
   },
   {
     "id": "row-48",
@@ -765,7 +812,8 @@
     "lifelongLearningCategories": "Adventures and Experiences",
     "topicCategory": "Diversity & Inclusion",
     "resource": "Sary Diab",
-    "resourceStatus": "Confirmed"
+    "resourceStatus": "Confirmed",
+    "targetAudience": "Members,Spouses (Mixed)"
   },
   {
     "id": "row-49",
@@ -781,6 +829,7 @@
     "lifelongLearningCategories": "Family Focus",
     "topicCategory": "Longevity",
     "resource": "Explorig Doctors",
-    "resourceStatus": "Pending"
+    "resourceStatus": "Pending",
+    "targetAudience": "Members,Spouses (Mixed),Family"
   }
 ]

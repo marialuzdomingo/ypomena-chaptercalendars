@@ -8,7 +8,7 @@ import eventsData from "@/data/events.json";
 const events = eventsData as ChapterEvent[];
 
 const RESOURCE_STATUS_STYLES: Record<string, string> = {
-  confirmed: "bg-moss/10 text-moss border-moss/30",
+  confirmed: "bg-blue/10 text-blue border-blue/30",
   "under negotiation": "bg-gold/10 text-gold border-gold/40",
   pending: "bg-gold/10 text-gold border-gold/40",
   wishlist: "bg-ink/5 text-ink/50 border-ink/15",
@@ -83,12 +83,12 @@ export default function ResourcesPage() {
     <main className="mx-auto max-w-5xl px-6 pb-24 pt-10">
       <header className="mb-8 flex items-start justify-between gap-4">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-moss">Chapter Events Registry</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-gold">Chapter Events Registry</p>
           <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight">Speakers &amp; resources.</h1>
         </div>
         <Link
           href="/"
-          className="mt-1 rounded-full border border-line bg-white px-4 py-2 font-mono text-xs text-ink/60 hover:border-moss hover:text-moss transition-colors whitespace-nowrap"
+          className="mt-1 rounded-full border border-line bg-white px-4 py-2 font-mono text-xs text-ink/60 hover:border-navy hover:text-navy transition-colors whitespace-nowrap"
         >
           ← back to events
         </Link>
@@ -146,7 +146,7 @@ export default function ResourcesPage() {
               setTopicCategory("");
               setSearch("");
             }}
-            className="mb-[1px] rounded-full border border-line px-3 py-2 text-xs font-mono text-ink/60 hover:border-clay hover:text-clay transition-colors"
+            className="mb-[1px] rounded-full border border-line px-3 py-2 text-xs font-mono text-ink/60 hover:border-orange hover:text-orange transition-colors"
           >
             clear filters
           </button>
@@ -185,7 +185,7 @@ export default function ResourcesPage() {
                     <ResourceStatusPill status={r.resourceStatus} />
                   </td>
                   <td className="px-4 py-3 text-ink/70">{r.topicCategory ?? "—"}</td>
-                  <td className="px-4 py-3 text-clay/80">{r.chapterName}</td>
+                  <td className="px-4 py-3 text-orange/80">{r.chapterName}</td>
                   <td className="px-4 py-3 text-ink/50">{r.eventName}</td>
                 </tr>
               ))}
@@ -196,7 +196,7 @@ export default function ResourcesPage() {
 
       <style jsx global>{`
         .select {
-          border: 1px solid #e4e1da;
+          border: 1px solid #E3E8EF;
           background: #fff;
           border-radius: 0.5rem;
           padding: 0.5rem 0.75rem;
@@ -205,7 +205,7 @@ export default function ResourcesPage() {
           min-width: 140px;
         }
         .select:focus {
-          outline: 2px solid #c9973b;
+          outline: 2px solid #D69D23;
           outline-offset: 1px;
         }
       `}</style>

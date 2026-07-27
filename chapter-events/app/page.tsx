@@ -21,10 +21,15 @@ const EMPTY_FILTERS: FilterValues = {
   openToRegion: "",
   lifelongLearningCategory: "",
   topicCategory: "",
+  targetAudience: "",
 };
 
 function uniqueSorted(values: (string | null)[]): string[] {
   return Array.from(new Set(values.filter((v): v is string => !!v))).sort();
+}
+
+function splitValues(value: string | null): string[] {
+  return (value ?? "").split(",").map((s) => s.trim()).filter(Boolean);
 }
 
 export default function HomePage() {
@@ -36,11 +41,15 @@ export default function HomePage() {
   const eventTypes = useMemo(() => uniqueSorted(events.map((e) => e.eventType)), []);
   const openToRegions = useMemo(() => uniqueSorted(events.map((e) => e.openToRegion)), []);
   const lifelongLearningCategories = useMemo(
-    () => uniqueSorted(events.flatMap((e) => (e.lifelongLearningCategories ?? "").split(",").map((s) => s.trim()))),
+    () => uniqueSorted(events.flatMap((e) => splitValues(e.lifelongLearningCategories))),
     []
   );
   const topicCategories = useMemo(
-    () => uniqueSorted(events.flatMap((e) => (e.topicCategory ?? "").split(",").map((s) => s.trim()))),
+    () => uniqueSorted(events.flatMap((e) => splitValues(e.topicCategory))),
+    []
+  );
+  const targetAudiences = useMemo(
+    () => uniqueSorted(events.flatMap((e) => splitValues(e.targetAudience))),
     []
   );
 
@@ -64,16 +73,10 @@ export default function HomePage() {
       if (filters.eventType && e.eventType !== filters.eventType) return false;
       if (filters.month && (!e.date || !e.date.startsWith(filters.month))) return false;
       if (filters.openToRegion && e.openToRegion !== filters.openToRegion) return false;
-      if (
-        filters.lifelongLearningCategory &&
-        !(e.lifelongLearningCategories ?? "").split(",").map((s) => s.trim()).includes(filters.lifelongLearningCategory)
-      )
+      if (filters.lifelongLearningCategory && !splitValues(e.lifelongLearningCategories).includes(filters.lifelongLearningCategory))
         return false;
-      if (
-        filters.topicCategory &&
-        !(e.topicCategory ?? "").split(",").map((s) => s.trim()).includes(filters.topicCategory)
-      )
-        return false;
+      if (filters.topicCategory && !splitValues(e.topicCategory).includes(filters.topicCategory)) return false;
+      if (filters.targetAudience && !splitValues(e.targetAudience).includes(filters.targetAudience)) return false;
       if (q) {
         const haystack = `${e.name} ${e.location ?? ""} ${e.description ?? ""}`.toLowerCase();
         if (!haystack.includes(q)) return false;
@@ -86,14 +89,14 @@ export default function HomePage() {
     <main className="mx-auto max-w-5xl px-6 pb-24 pt-10">
       <header className="mb-8 flex items-start justify-between gap-4">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-moss">Chapter Events Registry</p>
-          <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight">
+          <p className="font-mono text-xs uppercase tracking-widest text-gold">Chapter Events Registry</p>
+          <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-navy">
             Every chapter, one calendar.
           </h1>
         </div>
         <Link
           href="/resources"
-          className="mt-1 rounded-full border border-line bg-white px-4 py-2 font-mono text-xs text-ink/60 hover:border-moss hover:text-moss transition-colors whitespace-nowrap"
+          className="mt-1 rounded-full border border-line bg-white px-4 py-2 font-mono text-xs text-ink/60 hover:border-navy hover:text-navy transition-colors whitespace-nowrap"
         >
           view resources →
         </Link>
@@ -115,6 +118,7 @@ export default function HomePage() {
         openToRegions={openToRegions}
         lifelongLearningCategories={lifelongLearningCategories}
         topicCategories={topicCategories}
+        targetAudiences={targetAudiences}
         values={filters}
         resultCount={filtered.length}
         onChange={(patch) => setFilters((prev) => ({ ...prev, ...patch }))}
@@ -128,7 +132,7 @@ export default function HomePage() {
               key={v}
               onClick={() => setView(v)}
               className={`rounded-full px-3 py-1.5 font-mono text-xs capitalize transition-colors ${
-                view === v ? "bg-moss text-white" : "text-ink/50 hover:text-ink"
+                view === v ? "bg-navy text-white" : "text-ink/50 hover:text-ink"
               }`}
             >
               {v}

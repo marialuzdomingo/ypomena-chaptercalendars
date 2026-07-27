@@ -2,6 +2,7 @@
 
 import type { ChapterEvent } from "@/lib/events";
 import { StatusPill } from "./StatusPill";
+import { getLearningOfficer } from "@/lib/learning-officers";
 
 function Detail({ label, value }: { label: string; value: string | null }) {
   if (!value) return null;
@@ -23,6 +24,8 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
       })
     : "No date set";
 
+  const learningOfficer = getLearningOfficer(event.chapterName);
+
   return (
     <div className="fixed inset-0 z-20 flex items-center justify-center bg-ink/30 px-4" onClick={onClose}>
       <div
@@ -39,7 +42,7 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
 
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <StatusPill status={event.status} />
-          <span className="font-medium text-clay/80 text-sm">{event.chapterName}</span>
+          <span className="font-medium text-orange/80 text-sm">{event.chapterName}</span>
         </div>
 
         {event.description && (
@@ -51,9 +54,23 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
           <Detail label="Location" value={event.location} />
           <Detail label="Open to region" value={event.openToRegion} />
           <Detail label="Topic category" value={event.topicCategory} />
+          <Detail label="Target audience" value={event.targetAudience} />
           <Detail label="Lifelong learning" value={event.lifelongLearningCategories} />
           <Detail label="Speaker / resource" value={event.resource} />
           <Detail label="Resource status" value={event.resourceStatus} />
+          {learningOfficer && (
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-wide text-ink/40">Learning officer</p>
+              <a
+                href={learningOfficer.profileUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-0.5 inline-block text-sm text-blue hover:underline"
+              >
+                {learningOfficer.name} →
+              </a>
+            </div>
+          )}
         </div>
 
         {event.link && (
@@ -61,7 +78,7 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
             href={event.link}
             target="_blank"
             rel="noreferrer"
-            className="mt-5 inline-block font-mono text-xs text-moss hover:underline"
+            className="mt-5 inline-block font-mono text-xs text-blue hover:underline"
           >
             open in Airtable →
           </a>

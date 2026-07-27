@@ -1,7 +1,9 @@
 const STATUS_STYLES: Record<string, string> = {
-  confirmed: "bg-moss/10 text-moss border-moss/30",
+  confirmed: "bg-blue/10 text-blue border-blue/30",
+  scheduled: "bg-orange/10 text-orange border-orange/30",
+  "planning stage": "bg-gold/10 text-gold border-gold/40",
   tentative: "bg-gold/10 text-gold border-gold/40",
-  cancelled: "bg-clay/10 text-clay border-clay/30",
+  cancelled: "bg-red/10 text-red border-red/30",
 };
 
 export function StatusPill({ status }: { status: string | null }) {

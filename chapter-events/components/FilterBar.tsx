@@ -9,6 +9,7 @@ export type FilterValues = {
   openToRegion: string;
   lifelongLearningCategory: string;
   topicCategory: string;
+  targetAudience: string;
 };
 
 type FilterBarProps = {
@@ -20,6 +21,7 @@ type FilterBarProps = {
   openToRegions: string[];
   lifelongLearningCategories: string[];
   topicCategories: string[];
+  targetAudiences: string[];
   values: FilterValues;
   onChange: (patch: Partial<FilterValues>) => void;
   onReset: () => void;
@@ -35,6 +37,7 @@ export function FilterBar({
   openToRegions,
   lifelongLearningCategories,
   topicCategories,
+  targetAudiences,
   values,
   onChange,
   onReset,
@@ -134,6 +137,21 @@ export function FilterBar({
           </select>
         </Field>
 
+        <Field label="Target audience">
+          <select
+            value={values.targetAudience}
+            onChange={(e) => onChange({ targetAudience: e.target.value })}
+            className="select"
+          >
+            <option value="">Anyone</option>
+            {targetAudiences.map((v) => (
+              <option key={v} value={v}>
+                {v}
+              </option>
+            ))}
+          </select>
+        </Field>
+
         <Field label="Search">
           <input
             type="text"
@@ -147,7 +165,7 @@ export function FilterBar({
         {hasActiveFilters && (
           <button
             onClick={onReset}
-            className="mb-[1px] rounded-full border border-line px-3 py-2 text-xs font-mono text-ink/60 hover:border-clay hover:text-clay transition-colors"
+            className="mb-[1px] rounded-full border border-line px-3 py-2 text-xs font-mono text-ink/60 hover:border-orange hover:text-orange transition-colors"
           >
             clear filters
           </button>
@@ -160,7 +178,7 @@ export function FilterBar({
 
       <style jsx global>{`
         .select {
-          border: 1px solid #e4e1da;
+          border: 1px solid #E3E8EF;
           background: #fff;
           border-radius: 0.5rem;
           padding: 0.5rem 0.75rem;
@@ -169,7 +187,7 @@ export function FilterBar({
           min-width: 140px;
         }
         .select:focus {
-          outline: 2px solid #c9973b;
+          outline: 2px solid #D69D23;
           outline-offset: 1px;
         }
       `}</style>

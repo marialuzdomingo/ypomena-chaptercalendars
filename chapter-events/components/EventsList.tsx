@@ -78,7 +78,7 @@ function EventRow({ event, onClick }: { event: ChapterEvent; onClick: () => void
           )}
         </div>
         <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs text-ink/50">
-          <span className="font-medium text-clay/80">{event.chapterName}</span>
+          <span className="font-medium text-orange/80">{event.chapterName}</span>
           {event.location && <span>· {event.location}</span>}
         </div>
       </div>

@@ -24,6 +24,7 @@ const COLUMNS = {
   topicCategory: "Topic Category",
   resource: "Speaker / Resource",
   resourceStatus: "Resource Status",
+  targetAudience: "Target Audience",
 };
 
 // Columns that are allowed to be missing from the CSV without a warning.
@@ -37,6 +38,7 @@ const OPTIONAL_COLUMNS = new Set([
   "topicCategory",
   "resource",
   "resourceStatus",
+  "targetAudience",
 ]);
 
 function parseCsv(text) {
@@ -160,6 +162,7 @@ function main() {
       topicCategory: get("topicCategory"),
       resource: get("resource"),
       resourceStatus: get("resourceStatus"),
+      targetAudience: get("targetAudience"),
     });
   }
 

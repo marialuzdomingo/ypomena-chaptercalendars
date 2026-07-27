@@ -18,9 +18,11 @@ import { StatusPill } from "./StatusPill";
 import { EventDetailModal } from "./EventDetailModal";
 
 const STATUS_DOT: Record<string, string> = {
-  confirmed: "bg-moss",
+  confirmed: "bg-blue",
+  scheduled: "bg-orange",
+  "planning stage": "bg-gold",
   tentative: "bg-gold",
-  cancelled: "bg-clay",
+  cancelled: "bg-red",
 };
 
 function dotColor(status: string | null) {
@@ -66,7 +68,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setCursor((c) => subMonths(c, 1))}
-            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-moss hover:text-moss transition-colors"
+            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-navy hover:text-navy transition-colors"
             aria-label="Previous month"
           >
             ←
@@ -76,7 +78,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
           </h2>
           <button
             onClick={() => setCursor((c) => addMonths(c, 1))}
-            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-moss hover:text-moss transition-colors"
+            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-navy hover:text-navy transition-colors"
             aria-label="Next month"
           >
             →
@@ -84,7 +86,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
         </div>
         <button
           onClick={() => setCursor(startOfMonth(new Date()))}
-          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-ink/50 hover:border-moss hover:text-moss transition-colors"
+          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-ink/50 hover:border-navy hover:text-navy transition-colors"
         >
           today
         </button>
@@ -115,7 +117,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
             >
               <span
                 className={`inline-flex h-6 w-6 items-center justify-center rounded-full font-mono text-xs ${
-                  isToday ? "bg-moss text-white" : inMonth ? "text-ink/70" : "text-ink/30"
+                  isToday ? "bg-navy text-white" : inMonth ? "text-ink/70" : "text-ink/30"
                 }`}
               >
                 {format(day, "d")}
@@ -176,7 +178,7 @@ function DayPanel({ day, events, onClose }: { day: Date; events: ChapterEvent[];
                 <StatusPill status={ev.status} />
               </div>
               <div className="mt-1 text-xs text-ink/50">
-                <span className="font-medium text-clay/80">{ev.chapterName}</span>
+                <span className="font-medium text-orange/80">{ev.chapterName}</span>
                 {ev.eventType && <span> · {ev.eventType}</span>}
                 {ev.location && <span> · {ev.location}</span>}
               </div>

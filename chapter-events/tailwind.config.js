@@ -4,12 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#1C1B1A",
-        paper: "#FAF9F6",
-        line: "#E4E1DA",
-        moss: "#3D5A45",
-        clay: "#B4552F",
-        gold: "#C9973B",
+        // YPO brand palette (from YPO_Color_Swatch_Main_BrandColors)
+        navy: "#041E42",   // core brand color — dark blue, primary
+        blue: "#0057B7",   // secondary blue — links, interactive accents
+        gold: "#D69D23",   // core brand color — gold
+        orange: "#EA7600", // secondary — chapter tags, warm accent
+        red: "#DA291C",    // secondary — reserved for "cancelled" status only
+        ink: "#1C1F26",
+        paper: "#FAFAFC",
+        line: "#E3E8EF",
       },
       fontFamily: {
         display: ["'Fraunces'", "serif"],
