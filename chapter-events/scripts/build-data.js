@@ -97,6 +97,19 @@ function correctChapterName(name) {
   return CHAPTER_NAME_CORRECTIONS[name] ?? name;
 }
 
+// Every 2025 date across the whole dataset should actually be 2026 — a mistake
+// several chapters made independently when filling in their calendars.
+// If this ever needs to be chapter-specific again, add per-chapter overrides here.
+const GLOBAL_YEAR_CORRECTIONS = { 2025: 2026 };
+
+function correctDate(isoDate) {
+  if (!isoDate) return isoDate;
+  const year = Number(isoDate.slice(0, 4));
+  const correctedYear = GLOBAL_YEAR_CORRECTIONS[year];
+  if (!correctedYear) return isoDate;
+  return `${correctedYear}${isoDate.slice(4)}`;
+}
+
 function toIsoDate(value) {
   if (!value) return null;
   const trimmed = value.trim();
@@ -162,7 +175,7 @@ function main() {
       id: `row-${i}`,
       chapterName,
       name,
-      date: toIsoDate(get("date")),
+      date: correctDate(toIsoDate(get("date"))),
       status: get("status"),
       eventType: get("eventType"),
       location: get("location"),

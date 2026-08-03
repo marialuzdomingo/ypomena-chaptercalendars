@@ -87,19 +87,28 @@ export default function HomePage() {
 
   return (
     <main className="mx-auto max-w-5xl px-6 pb-24 pt-10">
-      <header className="mb-8 flex items-start justify-between gap-4">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-gold">Chapter Events Registry</p>
-          <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-ink">
-            Every chapter, one calendar.
-          </h1>
+      <header className="mb-8">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-gold">Chapter Events Registry</p>
+            <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-ink">
+              Every chapter, one calendar.
+            </h1>
+          </div>
+          <Link
+            href="/resources"
+            className="mt-1 rounded-full border border-line bg-paper px-4 py-2 font-mono text-xs text-ink/60 hover:border-gold hover:text-gold transition-colors whitespace-nowrap"
+          >
+            view resources →
+          </Link>
         </div>
-        <Link
-          href="/resources"
-          className="mt-1 rounded-full border border-line bg-paper px-4 py-2 font-mono text-xs text-ink/60 hover:border-gold hover:text-gold transition-colors whitespace-nowrap"
-        >
-          view resources →
-        </Link>
+        <p className="mt-3 max-w-2xl text-sm text-ink/60">
+          This shows learning events submitted by chapters that have a resource attached — regardless of
+          status (TBC, Confirmed, or Wishlist) — plus events open to the region. It isn&apos;t every chapter
+          event: things like opening/closing parties, forum trainings, game plans, and most social events
+          are excluded, so what&apos;s here stays focused on useful learning content. Click any event to
+          reach that chapter&apos;s Learning Officer directly with questions.
+        </p>
       </header>
 
       {events.length === 0 && (
