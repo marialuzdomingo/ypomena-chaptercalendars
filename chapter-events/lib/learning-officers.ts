@@ -33,6 +33,7 @@ export const LEARNING_OFFICERS: LearningOfficer[] = [
   { chapterName: "YPO MENA One Regional Integrated", name: "Heba Al Emara", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=30303334-4d30-3030-3032-505567353700" },
   { chapterName: "YPO Morocco Integrated", name: "Mehdi Slaoui", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=30303334-4d30-3030-3031-7673456d3800" },
   { chapterName: "YPO Olive MENA Regional Integrated", name: "Sachiv Mehta", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=57d0e8d8-6884-e311-9967-0050569257ef" },
+  { chapterName: "YPO MENA Olive Regional Integrated", name: "Sachiv Mehta", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=57d0e8d8-6884-e311-9967-0050569257ef" }, // alias: events data uses this word order
   { chapterName: "YPO Oman Integrated", name: "Jose Amorim", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=30303334-4d30-3030-3032-466c34437300" },
   { chapterName: "YPO Pakistan", name: "Nida Hussain", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=30303334-5230-3030-3034-43525a707700" },
   { chapterName: "YPO Palestine Integrated", name: "Ahmed HajHasan", profileUrl: "https://www.ypoconnect.org/#/memberProfile?memberId=020f2fca-f145-e311-9967-0050569257ef" },

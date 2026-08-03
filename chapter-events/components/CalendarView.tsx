@@ -18,7 +18,7 @@ import { StatusPill } from "./StatusPill";
 import { EventDetailModal } from "./EventDetailModal";
 
 const STATUS_DOT: Record<string, string> = {
-  confirmed: "bg-blue",
+  confirmed: "bg-sky",
   scheduled: "bg-orange",
   "planning stage": "bg-gold",
   tentative: "bg-gold",
@@ -68,7 +68,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setCursor((c) => subMonths(c, 1))}
-            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-navy hover:text-navy transition-colors"
+            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-gold hover:text-gold transition-colors"
             aria-label="Previous month"
           >
             ←
@@ -78,7 +78,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
           </h2>
           <button
             onClick={() => setCursor((c) => addMonths(c, 1))}
-            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-navy hover:text-navy transition-colors"
+            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink/60 hover:border-gold hover:text-gold transition-colors"
             aria-label="Next month"
           >
             →
@@ -86,7 +86,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
         </div>
         <button
           onClick={() => setCursor(startOfMonth(new Date()))}
-          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-ink/50 hover:border-navy hover:text-navy transition-colors"
+          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-ink/50 hover:border-gold hover:text-gold transition-colors"
         >
           today
         </button>
@@ -94,7 +94,7 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
 
       <div className="grid grid-cols-7 gap-px overflow-hidden rounded-lg border border-line bg-line">
         {WEEKDAYS.map((d) => (
-          <div key={d} className="bg-white px-2 py-2 text-center font-mono text-[11px] uppercase tracking-wide text-ink/40">
+          <div key={d} className="bg-paper px-2 py-2 text-center font-mono text-[11px] uppercase tracking-wide text-ink/40">
             {d}
           </div>
         ))}
@@ -111,13 +111,13 @@ export function CalendarView({ events }: { events: ChapterEvent[] }) {
             <button
               key={key}
               onClick={() => dayEvents.length > 0 && setSelectedDay(day)}
-              className={`min-h-[104px] bg-white p-2 text-left align-top transition-colors ${
+              className={`min-h-[104px] bg-paper p-2 text-left align-top transition-colors ${
                 inMonth ? "" : "bg-paper/60"
               } ${dayEvents.length > 0 ? "cursor-pointer hover:bg-gold/5" : "cursor-default"}`}
             >
               <span
                 className={`inline-flex h-6 w-6 items-center justify-center rounded-full font-mono text-xs ${
-                  isToday ? "bg-navy text-white" : inMonth ? "text-ink/70" : "text-ink/30"
+                  isToday ? "bg-gold text-navy" : inMonth ? "text-ink/70" : "text-ink/30"
                 }`}
               >
                 {format(day, "d")}
@@ -157,7 +157,7 @@ function DayPanel({ day, events, onClose }: { day: Date; events: ChapterEvent[];
   return (
     <div className="fixed inset-0 z-20 flex items-center justify-center bg-ink/30 px-4" onClick={onClose}>
       <div
-        className="max-h-[80vh] w-full max-w-md overflow-y-auto rounded-xl border border-line bg-white p-5 shadow-xl"
+        className="max-h-[80vh] w-full max-w-md overflow-y-auto rounded-xl border border-line bg-paper p-5 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">

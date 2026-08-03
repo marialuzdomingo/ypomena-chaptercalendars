@@ -17,8 +17,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-paper text-ink font-body antialiased">
-        <div className="bg-navy px-6 py-2 text-center font-mono text-[11px] uppercase tracking-widest text-gold">
+      <body className="bg-navy text-ink font-body antialiased">
+        <div className="bg-gold px-6 py-2 text-center font-mono text-[11px] font-medium uppercase tracking-widest text-navy">
           YPO Middle East / North Africa
         </div>
         {children}

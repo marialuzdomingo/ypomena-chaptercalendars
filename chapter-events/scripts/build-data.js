@@ -86,6 +86,17 @@ function parseCsv(text) {
   return rows.filter((r) => r.some((cell) => cell.trim() !== ""));
 }
 
+// Corrects known naming inconsistencies coming out of Airtable, so the site
+// always shows the right chapter name even if the export has it wrong.
+// Add more entries here any time a chapter's name shows up incorrectly.
+const CHAPTER_NAME_CORRECTIONS = {
+  "YPO MENA Olive Regional Integrated": "YPO Olive MENA Regional Integrated",
+};
+
+function correctChapterName(name) {
+  return CHAPTER_NAME_CORRECTIONS[name] ?? name;
+}
+
 function toIsoDate(value) {
   if (!value) return null;
   const trimmed = value.trim();
@@ -140,7 +151,7 @@ function main() {
     };
 
     const name = get("eventName");
-    const chapterName = get("chapter");
+    const chapterName = get("chapter") ? correctChapterName(get("chapter")) : null;
 
     if (!name || !chapterName) {
       skipped++;

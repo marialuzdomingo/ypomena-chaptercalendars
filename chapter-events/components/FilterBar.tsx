@@ -178,16 +178,19 @@ export function FilterBar({
 
       <style jsx global>{`
         .select {
-          border: 1px solid #E3E8EF;
-          background: #fff;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: #0b2a52;
           border-radius: 0.5rem;
           padding: 0.5rem 0.75rem;
           font-size: 0.875rem;
-          color: #1c1b1a;
+          color: #f2f5f9;
           min-width: 140px;
         }
+        .select::placeholder {
+          color: rgba(242, 245, 249, 0.4);
+        }
         .select:focus {
-          outline: 2px solid #D69D23;
+          outline: 2px solid #d69d23;
           outline-offset: 1px;
         }
       `}</style>

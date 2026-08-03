@@ -67,7 +67,7 @@ function EventRow({ event, onClick }: { event: ChapterEvent; onClick: () => void
   return (
     <button
       onClick={onClick}
-      className="grid grid-cols-[100px_1fr_auto] items-center gap-4 rounded-lg border border-transparent px-3 py-3 text-left transition-colors hover:border-line hover:bg-white"
+      className="grid grid-cols-[100px_1fr_auto] items-center gap-4 rounded-lg border border-transparent px-3 py-3 text-left transition-colors hover:border-line hover:bg-paper"
     >
       <span className="font-mono text-xs text-ink/50">{day}</span>
       <div className="min-w-0">

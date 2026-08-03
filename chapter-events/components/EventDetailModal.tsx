@@ -29,7 +29,7 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
   return (
     <div className="fixed inset-0 z-20 flex items-center justify-center bg-ink/30 px-4" onClick={onClose}>
       <div
-        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl border border-line bg-white p-6 shadow-xl"
+        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl border border-line bg-paper p-6 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-1 flex items-start justify-between gap-3">
@@ -65,7 +65,7 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
                 href={learningOfficer.profileUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-0.5 inline-block text-sm text-blue hover:underline"
+                className="mt-0.5 inline-block text-sm text-sky hover:underline"
               >
                 {learningOfficer.name} →
               </a>
@@ -78,7 +78,7 @@ export function EventDetailModal({ event, onClose }: { event: ChapterEvent; onCl
             href={event.link}
             target="_blank"
             rel="noreferrer"
-            className="mt-5 inline-block font-mono text-xs text-blue hover:underline"
+            className="mt-5 inline-block font-mono text-xs text-sky hover:underline"
           >
             open in Airtable →
           </a>
