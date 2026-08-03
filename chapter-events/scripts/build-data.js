@@ -110,6 +110,22 @@ function correctDate(isoDate) {
   return `${correctedYear}${isoDate.slice(4)}`;
 }
 
+// One-off date overrides for specific events, keyed by "Chapter Name|Exact Event Name".
+// Use an ISO date (yyyy-mm-dd) to set a specific date, or `null` for "TBC" (shows as
+// undated — under "Undated" in list view, not plotted on the calendar).
+// Where only a month was given (no exact day), the 1st of that month is used as a
+// placeholder — update here once an exact day is known.
+const EVENT_DATE_CORRECTIONS = {
+  "YPO Saudi|Building AI Skills, One Sprint at a Time with Andrea Prazakova": "2027-01-01",
+  "YPO Saudi|Sushi Making Event": "2027-04-01",
+  "YPO Cairo|Library of Lost Wisdom": null,
+};
+
+function applyEventDateOverride(chapterName, name, isoDate) {
+  const key = `${chapterName}|${name}`;
+  return key in EVENT_DATE_CORRECTIONS ? EVENT_DATE_CORRECTIONS[key] : isoDate;
+}
+
 function toIsoDate(value) {
   if (!value) return null;
   const trimmed = value.trim();
@@ -175,7 +191,7 @@ function main() {
       id: `row-${i}`,
       chapterName,
       name,
-      date: correctDate(toIsoDate(get("date"))),
+      date: applyEventDateOverride(chapterName, name, correctDate(toIsoDate(get("date")))),
       status: get("status"),
       eventType: get("eventType"),
       location: get("location"),

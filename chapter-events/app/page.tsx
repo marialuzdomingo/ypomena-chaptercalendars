@@ -109,6 +109,11 @@ export default function HomePage() {
           are excluded, so what&apos;s here stays focused on useful learning content. Click any event to
           reach that chapter&apos;s Learning Officer directly with questions.
         </p>
+        <p className="mt-2 max-w-2xl text-sm text-ink/60">
+          The information on this site is updated during the first days of each month based on each
+          chapter&apos;s calendar, so we suggest keeping your calendar up to date — and if you have any
+          questions, please reach out to the respective chapter&apos;s Learning Officer.
+        </p>
       </header>
 
       {events.length === 0 && (
