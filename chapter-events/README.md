@@ -69,6 +69,22 @@ If you'd rather not use GitHub at all, you can also deploy straight from
 your machine with the Vercel CLI (`npx vercel --prod` from inside the
 project folder) and re-run that command each time you update the CSV.
 
+## Password protection
+
+The whole site is behind a simple password prompt (browser's built-in login
+box, not a custom page) — any username works, only the password matters.
+It's set in `middleware.ts` at the project root:
+
+```ts
+const SITE_PASSWORD = "YPOMENA";
+```
+
+To change it, edit that line and redeploy. This is a basic deterrent (fine
+for keeping the link out of casual/search reach) rather than strong
+security — anyone with the password can share it further, and it's visible
+in plain text in the source code, so don't put anything truly sensitive
+behind it.
+
 ## If you later want it to auto-update from Airtable
 
 This static version trades live-sync for zero maintenance. If down the

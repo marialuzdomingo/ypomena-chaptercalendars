@@ -103,6 +103,10 @@ export default function HomePage() {
           </Link>
         </div>
         <p className="mt-3 max-w-2xl text-sm text-ink/60">
+          This site is for Learning Officers, Chapter Managers, and Chapter Board Members, to help
+          chapters collaborate and share resources. Please don&apos;t share it with all chapter members.
+        </p>
+        <p className="mt-2 max-w-2xl text-sm text-ink/60">
           This shows learning events submitted by chapters that have a resource attached — regardless of
           status (TBC, Confirmed, or Wishlist) — plus events open to the region. It isn&apos;t every chapter
           event: things like opening/closing parties, forum trainings, game plans, and most social events
@@ -114,6 +118,7 @@ export default function HomePage() {
           chapter&apos;s calendar, so we suggest keeping your calendar up to date — and if you have any
           questions, please reach out to the respective chapter&apos;s Learning Officer.
         </p>
+        <p className="mt-3 font-mono text-xs text-ink/40">Information updated as of 3 August 2026.</p>
       </header>
 
       {events.length === 0 && (

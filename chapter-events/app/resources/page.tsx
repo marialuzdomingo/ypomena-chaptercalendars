@@ -72,17 +72,24 @@ export default function ResourcesPage() {
 
   return (
     <main className="mx-auto max-w-5xl px-6 pb-24 pt-10">
-      <header className="mb-8 flex items-start justify-between gap-4">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-gold">Chapter Events Registry</p>
-          <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-ink">Speakers &amp; resources.</h1>
+      <header className="mb-8">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-gold">Chapter Events Registry</p>
+            <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-ink">Speakers &amp; resources.</h1>
+          </div>
+          <Link
+            href="/"
+            className="mt-1 rounded-full border border-line bg-paper px-4 py-2 font-mono text-xs text-ink/60 hover:border-gold hover:text-gold transition-colors whitespace-nowrap"
+          >
+            ← back to events
+          </Link>
         </div>
-        <Link
-          href="/"
-          className="mt-1 rounded-full border border-line bg-paper px-4 py-2 font-mono text-xs text-ink/60 hover:border-gold hover:text-gold transition-colors whitespace-nowrap"
-        >
-          ← back to events
-        </Link>
+        <p className="mt-3 max-w-2xl text-sm text-ink/60">
+          For Learning Officers, Chapter Managers, and Chapter Board Members only — please don&apos;t share
+          with all chapter members.
+        </p>
+        <p className="mt-3 font-mono text-xs text-ink/40">Information updated as of 3 August 2026.</p>
       </header>
 
       <div className="mb-6">
