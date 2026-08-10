@@ -71,19 +71,23 @@ project folder) and re-run that command each time you update the CSV.
 
 ## Password protection
 
-The whole site is behind a simple password prompt (browser's built-in login
-box, not a custom page) — any username works, only the password matters.
-It's set in `middleware.ts` at the project root:
+The whole site sits behind a simple password page (just a password field —
+no username) at `/login`. Visiting any page without having entered it
+redirects you there first; once entered, it's remembered in your browser
+for 30 days via a cookie.
+
+The password is set in `app/login/page.tsx`:
 
 ```ts
 const SITE_PASSWORD = "YPOMENA";
 ```
 
-To change it, edit that line and redeploy. This is a basic deterrent (fine
-for keeping the link out of casual/search reach) rather than strong
-security — anyone with the password can share it further, and it's visible
-in plain text in the source code, so don't put anything truly sensitive
-behind it.
+To change it, edit that line and redeploy.
+
+This is a basic deterrent (fine for keeping the link out of casual/search
+reach) rather than strong security — anyone with the password can share it
+further, and the password is visible in plain text in the source code, so
+don't put anything truly sensitive behind it.
 
 ## If you later want it to auto-update from Airtable
 
