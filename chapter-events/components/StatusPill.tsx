@@ -9,7 +9,7 @@ const STATUS_STYLES: Record<string, string> = {
 export function StatusPill({ status }: { status: string | null }) {
   if (!status) {
     return (
-      <span className="inline-flex items-center rounded-full border border-line px-2 py-0.5 text-xs font-mono text-ink/50">
+      <span className="inline-flex max-w-[80px] items-center truncate rounded-full border border-line px-1.5 py-0.5 text-[10px] font-mono text-ink/50 sm:max-w-none sm:px-2 sm:text-xs">
         no status
       </span>
     );
@@ -20,7 +20,7 @@ export function StatusPill({ status }: { status: string | null }) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-mono ${style}`}
+      className={`inline-flex max-w-[80px] items-center truncate rounded-full border px-1.5 py-0.5 text-[10px] font-mono sm:max-w-none sm:px-2 sm:text-xs ${style}`}
     >
       {status}
     </span>

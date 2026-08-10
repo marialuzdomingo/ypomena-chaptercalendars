@@ -56,33 +56,44 @@ export function EventsList({ events, monthLabels }: { events: ChapterEvent[]; mo
 }
 
 function EventRow({ event, onClick }: { event: ChapterEvent; onClick: () => void }) {
-  const day = event.date
+  const fullDay = event.date
     ? new Date(event.date + "T00:00:00").toLocaleDateString(undefined, {
         weekday: "short",
         month: "short",
         day: "numeric",
       })
     : "No date";
+  const shortDay = event.date
+    ? new Date(event.date + "T00:00:00").toLocaleDateString(undefined, {
+        month: "short",
+        day: "numeric",
+      })
+    : "—";
 
   return (
     <button
       onClick={onClick}
-      className="grid grid-cols-[100px_1fr_auto] items-center gap-4 rounded-lg border border-transparent px-3 py-3 text-left transition-colors hover:border-line hover:bg-paper"
+      className="grid grid-cols-[44px_1fr_auto] items-start gap-2 rounded-lg border border-transparent px-2 py-3 text-left transition-colors hover:border-line hover:bg-paper sm:grid-cols-[100px_1fr_auto] sm:items-center sm:gap-4 sm:px-3"
     >
-      <span className="font-mono text-xs text-ink/50">{day}</span>
+      <span className="pt-0.5 font-mono text-[11px] leading-tight text-ink/50 sm:pt-0 sm:text-xs">
+        <span className="sm:hidden">{shortDay}</span>
+        <span className="hidden sm:inline">{fullDay}</span>
+      </span>
       <div className="min-w-0">
-        <div className="flex flex-wrap items-baseline gap-2">
-          <span className="truncate font-medium text-ink">{event.name}</span>
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+          <span className="font-medium text-ink sm:truncate">{event.name}</span>
           {event.eventType && (
             <span className="font-mono text-[11px] text-ink/40">{event.eventType}</span>
           )}
         </div>
-        <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs text-ink/50">
+        <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-ink/50">
           <span className="font-medium text-orange/80">{event.chapterName}</span>
           {event.location && <span>· {event.location}</span>}
         </div>
       </div>
-      <StatusPill status={event.status} />
+      <div className="pt-0.5 sm:pt-0">
+        <StatusPill status={event.status} />
+      </div>
     </button>
   );
 }

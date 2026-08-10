@@ -164,6 +164,13 @@ export default function ResourcesPage() {
             </button>
           )}
 
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="mb-[1px] rounded-full bg-gold px-4 py-2 text-xs font-mono font-semibold text-navy sm:hidden"
+          >
+            Show {filtered.length} result{filtered.length === 1 ? "" : "s"}
+          </button>
+
           <div className="hidden font-mono text-xs text-ink/40 sm:ml-auto sm:mb-1 sm:block">
             {filtered.length} resource{filtered.length === 1 ? "" : "s"}
           </div>

@@ -195,6 +195,13 @@ export function FilterBar({
           </button>
         )}
 
+        <button
+          onClick={() => setMobileOpen(false)}
+          className="mb-[1px] rounded-full bg-gold px-4 py-2 text-xs font-mono font-semibold text-navy sm:hidden"
+        >
+          Show {resultCount} result{resultCount === 1 ? "" : "s"}
+        </button>
+
         {/* Result count — desktop only, mobile shows it in the compact toggle row instead */}
         <div className="hidden font-mono text-xs text-ink/40 sm:ml-auto sm:mb-1 sm:block">
           {resultCount} event{resultCount === 1 ? "" : "s"}
