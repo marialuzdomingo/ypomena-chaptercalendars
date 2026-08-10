@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 export type FilterValues = {
   chapter: string;
   status: string;
@@ -43,11 +45,33 @@ export function FilterBar({
   onReset,
   resultCount,
 }: FilterBarProps) {
-  const hasActiveFilters = Object.values(values).some((v) => v !== "");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const activeCount = Object.values(values).filter((v) => v !== "").length;
+  const hasActiveFilters = activeCount > 0;
 
   return (
-    <div className="sticky top-0 z-10 -mx-6 border-b border-line bg-paper/95 px-6 py-4 backdrop-blur">
-      <div className="flex flex-wrap items-end gap-3">
+    <div className="sticky top-0 z-10 -mx-6 border-b border-line bg-paper/95 px-6 py-3 backdrop-blur sm:py-4">
+      {/* Compact toggle row — mobile only */}
+      <div className="flex items-center justify-between sm:hidden">
+        <button
+          onClick={() => setMobileOpen((v) => !v)}
+          className="flex items-center gap-2 rounded-full border border-line px-4 py-2 font-mono text-xs text-ink/70"
+        >
+          Filters
+          {activeCount > 0 && (
+            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[10px] font-semibold text-navy">
+              {activeCount}
+            </span>
+          )}
+          <span className="text-ink/40">{mobileOpen ? "▲" : "▼"}</span>
+        </button>
+        <div className="font-mono text-xs text-ink/40">
+          {resultCount} event{resultCount === 1 ? "" : "s"}
+        </div>
+      </div>
+
+      {/* Filter fields — hidden by default on mobile until toggled, always shown on sm+ */}
+      <div className={`${mobileOpen ? "mt-3 flex" : "hidden"} flex-col gap-3 sm:mt-0 sm:flex sm:flex-row sm:flex-wrap sm:items-end`}>
         <Field label="Chapter">
           <select value={values.chapter} onChange={(e) => onChange({ chapter: e.target.value })} className="select">
             <option value="">All chapters</option>
@@ -171,7 +195,8 @@ export function FilterBar({
           </button>
         )}
 
-        <div className="ml-auto mb-1 font-mono text-xs text-ink/40">
+        {/* Result count — desktop only, mobile shows it in the compact toggle row instead */}
+        <div className="hidden font-mono text-xs text-ink/40 sm:ml-auto sm:mb-1 sm:block">
           {resultCount} event{resultCount === 1 ? "" : "s"}
         </div>
       </div>

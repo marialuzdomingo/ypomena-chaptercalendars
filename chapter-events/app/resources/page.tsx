@@ -41,6 +41,7 @@ export default function ResourcesPage() {
   const [topicCategory, setTopicCategory] = useState("");
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState<ChapterEvent | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   // Keep full events (not a stripped-down projection) so a click can open the full detail modal.
   const rows = useMemo(() => events.filter((e) => e.resource), []);
@@ -84,66 +85,88 @@ export default function ResourcesPage() {
         </Link>
       </header>
 
-      <div className="mb-6 flex flex-wrap items-end gap-3">
-        <Field label="Chapter">
-          <select value={chapter} onChange={(e) => setChapter(e.target.value)} className="select">
-            <option value="">All chapters</option>
-            {chapters.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="Resource status">
-          <select value={resourceStatus} onChange={(e) => setResourceStatus(e.target.value)} className="select">
-            <option value="">Any status</option>
-            {statuses.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="Topic category">
-          <select value={topicCategory} onChange={(e) => setTopicCategory(e.target.value)} className="select">
-            <option value="">Any topic</option>
-            {topics.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="Search">
-          <input
-            type="text"
-            placeholder="Speaker or resource name…"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="select min-w-[200px]"
-          />
-        </Field>
-
-        {hasActiveFilters && (
+      <div className="mb-6">
+        <div className="flex items-center justify-between sm:hidden">
           <button
-            onClick={() => {
-              setChapter("");
-              setResourceStatus("");
-              setTopicCategory("");
-              setSearch("");
-            }}
-            className="mb-[1px] rounded-full border border-line px-3 py-2 text-xs font-mono text-ink/60 hover:border-orange hover:text-orange transition-colors"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="flex items-center gap-2 rounded-full border border-line px-4 py-2 font-mono text-xs text-ink/70"
           >
-            clear filters
+            Filters
+            {!!hasActiveFilters && (
+              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[10px] font-semibold text-navy">
+                •
+              </span>
+            )}
+            <span className="text-ink/40">{mobileOpen ? "▲" : "▼"}</span>
           </button>
-        )}
+          <div className="font-mono text-xs text-ink/40">
+            {filtered.length} resource{filtered.length === 1 ? "" : "s"}
+          </div>
+        </div>
 
-        <div className="ml-auto mb-1 font-mono text-xs text-ink/40">
-          {filtered.length} resource{filtered.length === 1 ? "" : "s"}
+        <div
+          className={`${mobileOpen ? "mt-3 flex" : "hidden"} flex-col gap-3 sm:mt-0 sm:flex sm:flex-row sm:flex-wrap sm:items-end`}
+        >
+          <Field label="Chapter">
+            <select value={chapter} onChange={(e) => setChapter(e.target.value)} className="select">
+              <option value="">All chapters</option>
+              {chapters.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </Field>
+
+          <Field label="Resource status">
+            <select value={resourceStatus} onChange={(e) => setResourceStatus(e.target.value)} className="select">
+              <option value="">Any status</option>
+              {statuses.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          </Field>
+
+          <Field label="Topic category">
+            <select value={topicCategory} onChange={(e) => setTopicCategory(e.target.value)} className="select">
+              <option value="">Any topic</option>
+              {topics.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
+          </Field>
+
+          <Field label="Search">
+            <input
+              type="text"
+              placeholder="Speaker or resource name…"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="select min-w-[200px]"
+            />
+          </Field>
+
+          {hasActiveFilters && (
+            <button
+              onClick={() => {
+                setChapter("");
+                setResourceStatus("");
+                setTopicCategory("");
+                setSearch("");
+              }}
+              className="mb-[1px] rounded-full border border-line px-3 py-2 text-xs font-mono text-ink/60 hover:border-orange hover:text-orange transition-colors"
+            >
+              clear filters
+            </button>
+          )}
+
+          <div className="hidden font-mono text-xs text-ink/40 sm:ml-auto sm:mb-1 sm:block">
+            {filtered.length} resource{filtered.length === 1 ? "" : "s"}
+          </div>
         </div>
       </div>
 
@@ -153,38 +176,40 @@ export default function ResourcesPage() {
         </div>
       ) : (
         <div className="overflow-hidden rounded-lg border border-line bg-paper">
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b border-line">
-                <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">
-                  Speaker / resource
-                </th>
-                <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">Status</th>
-                <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">
-                  Topic category
-                </th>
-                <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">Chapter</th>
-                <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">For event</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-line">
-              {filtered.map((r) => (
-                <tr
-                  key={r.id}
-                  onClick={() => setSelected(r)}
-                  className="cursor-pointer transition-colors hover:bg-navy/40"
-                >
-                  <td className="px-4 py-3 font-medium text-ink">{r.resource}</td>
-                  <td className="px-4 py-3">
-                    <ResourceStatusPill status={r.resourceStatus} />
-                  </td>
-                  <td className="px-4 py-3 text-ink/70">{r.topicCategory ?? "—"}</td>
-                  <td className="px-4 py-3 text-orange/80">{r.chapterName}</td>
-                  <td className="px-4 py-3 text-ink/50">{r.name}</td>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[560px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-line">
+                  <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">
+                    Speaker / resource
+                  </th>
+                  <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">Status</th>
+                  <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">
+                    Topic category
+                  </th>
+                  <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">Chapter</th>
+                  <th className="px-4 py-3 font-mono text-[11px] uppercase tracking-wide text-ink/40">For event</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-line">
+                {filtered.map((r) => (
+                  <tr
+                    key={r.id}
+                    onClick={() => setSelected(r)}
+                    className="cursor-pointer transition-colors hover:bg-navy/40"
+                  >
+                    <td className="px-4 py-3 font-medium text-ink">{r.resource}</td>
+                    <td className="px-4 py-3">
+                      <ResourceStatusPill status={r.resourceStatus} />
+                    </td>
+                    <td className="px-4 py-3 text-ink/70">{r.topicCategory ?? "—"}</td>
+                    <td className="px-4 py-3 text-orange/80">{r.chapterName}</td>
+                    <td className="px-4 py-3 text-ink/50">{r.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 
